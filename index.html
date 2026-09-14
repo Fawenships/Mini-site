@@ -1,0 +1,600 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fawenbert Régis | Développeur</title>
+
+    <meta name="description"
+          content="Fawenbert Régis, développeur et créateur de solutions numériques. Contactez-moi directement sur WhatsApp.">
+
+    <meta name="theme-color" content="#075E54">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7f9;
+            color: #17202a;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #075E54;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #075E54;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 110px 20px 70px;
+            background:
+                radial-gradient(circle at top right, #d9fdd3, transparent 35%),
+                linear-gradient(135deg, #ffffff, #eef8f5);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #d9fdd3;
+            color: #075E54;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero h1 span {
+            color: #075E54;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 19px;
+            color: #5f6368;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.25s;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            background: #20bd5a;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #075E54;
+            border: 2px solid #075E54;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 85px 20px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .project-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .project p {
+            color: #666;
+        }
+
+        .project a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #075E54;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #075E54;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .contact .btn-whatsapp {
+            background: white;
+            color: #075E54;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #063f38;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+        }
+
+        /* ANIMATION */
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                Fawenbert Régis
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- ACCUEIL -->
+
+    <section class="hero" id="accueil">
+
+        <div class="hero-content fade-in">
+
+            <div class="badge">
+                💻 Développeur & Créateur
+            </div>
+
+            <h1>
+                Bonjour, je suis<br>
+                <span>Fawenbert Régis</span>
+            </h1>
+
+            <p>
+                Je crée des sites web, des applications et des solutions
+                numériques destinées à répondre à des problèmes réels.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    class="btn btn-whatsapp"
+                    href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20site%20et%20j%27aimerais%20discuter%20avec%20toi."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    💬 Me contacter sur WhatsApp
+                </a>
+
+                <a
+                    class="btn btn-secondary"
+                    href="#projets"
+                >
+                    🚀 Voir mes projets
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- À PROPOS -->
+
+    <section class="about" id="apropos">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>À propos de moi</h2>
+                <p>Quelques mots sur mon parcours</p>
+            </div>
+
+            <div class="about-box">
+
+                <p>
+                    Je suis <strong>Fawenbert Régis</strong>, développeur
+                    et créateur de projets numériques.
+                    Je m'intéresse particulièrement à la création de
+                    solutions web modernes, utiles et accessibles.
+                </p>
+
+                <br>
+
+                <p>
+                    Mon objectif est de continuer à développer mes
+                    compétences et de transformer mes idées en véritables
+                    projets pouvant être utilisés par les étudiants,
+                    les entreprises et le grand public.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJETS -->
+
+    <section id="projets">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Mes projets</h2>
+
+                <p>
+                    Quelques projets que j'ai créés
+                </p>
+
+            </div>
+
+
+            <div class="projects">
+
+                <!-- PROJET 1 -->
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        ExamQuiz Haiti
+                    </h3>
+
+                    <p>
+                        Une plateforme éducative permettant aux élèves
+                        de tester leurs connaissances et de se préparer
+                        à différents examens.
+                    </p>
+
+                    <a
+                        href="https://examquizhaiti.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visiter le projet →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJET 2 -->
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Konkou
+                    </h3>
+
+                    <p>
+                        Une plateforme de quiz conçue autour d'un système
+                        de compétition et de classement.
+                    </p>
+
+                    <a
+                        href="https://konkouquizhaiti.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visiter le projet →
+                    </a>
+
+                </div>
+
+
+                <!-- PROJET 3 -->
+
+                <div class="project">
+
+                    <div class="project-icon">
+                        🏫
+                    </div>
+
+                    <h3>
+                        Gestion scolaire
+                    </h3>
+
+                    <p>
+                        Un projet de plateforme destinée à faciliter
+                        la gestion des élèves, professeurs, classes
+                        et informations scolaires.
+                    </p>
+
+                    <a href="#contact">
+                        Me contacter →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <h2>
+                Parlons de ton projet
+            </h2>
+
+            <p>
+                Tu as une idée, une question ou un projet numérique ?
+                Contacte-moi directement sur WhatsApp.
+            </p>
+
+            <a
+                class="btn btn-whatsapp"
+                href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20site%20et%20j%27aimerais%20discuter%20avec%20toi."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 Ouvrir WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Fawenbert Régis — Tous droits réservés.
+        </p>
+
+        <p>
+            Développeur & Créateur
+        </p>
+
+    </footer>
+
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        // Animation simple au chargement
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.body.classList.add("loaded");
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
