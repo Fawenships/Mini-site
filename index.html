@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fawenbert Régis | Développeur</title>
+    <title>Fawenbert Régis — Développeur</title>
 
     <meta name="description"
-          content="Fawenbert Régis, développeur et créateur de solutions numériques. Contactez-moi directement sur WhatsApp.">
+        content="Portfolio de Fawenbert Régis — Développeur et créateur de solutions numériques.">
 
-    <meta name="theme-color" content="#075E54">
+    <meta name="theme-color" content="#080b12">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -24,29 +25,58 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7f9;
-            color: #17202a;
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #080b12;
+            color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* NAVBAR */
+        /* =========================
+           VARIABLES
+        ========================= */
 
-        nav {
+        :root {
+            --bg: #080b12;
+            --bg2: #0d111a;
+            --card: #111722;
+            --border: #202938;
+            --text: #ffffff;
+            --muted: #9ca7b8;
+            --blue: #3b82f6;
+            --blue-light: #60a5fa;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
+
+            background: rgba(8, 11, 18, 0.82);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
-        .nav-container {
-            max-width: 1100px;
+        .nav {
+            max-width: 1150px;
             margin: auto;
-            padding: 15px 20px;
+
+            padding: 18px 25px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,338 +85,802 @@
         .logo {
             font-size: 21px;
             font-weight: 800;
-            color: #075E54;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--blue-light);
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
+            color: #cbd5e1;
             text-decoration: none;
-            color: #333;
+            font-size: 14px;
             font-weight: 600;
+
+            transition: 0.25s;
         }
 
         .nav-links a:hover {
-            color: #075E54;
+            color: white;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 110px 20px 70px;
-            background:
-                radial-gradient(circle at top right, #d9fdd3, transparent 35%),
-                linear-gradient(135deg, #ffffff, #eef8f5);
+
+            padding:
+                140px 25px
+                90px;
+
+            position: relative;
         }
 
-        .hero-content {
-            max-width: 800px;
+        /* lumière */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(59,130,246,0.14);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            top: 100px;
+            right: -150px;
+
+            pointer-events: none;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #d9fdd3;
-            color: #075E54;
-            border-radius: 30px;
-            font-weight: bold;
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .small-title {
+            color: var(--blue-light);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
             margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 20px;
-            color: #111827;
+            font-size: clamp(45px, 7vw, 78px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: #075E54;
+            color: var(--blue-light);
         }
 
-        .hero p {
+        .hero-description {
+            color: var(--muted);
+
+            font-size: 18px;
+
             max-width: 650px;
-            margin: auto;
-            font-size: 19px;
-            color: #5f6368;
+
+            margin-bottom: 35px;
         }
 
         .buttons {
-            margin-top: 35px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 25px;
-            border-radius: 12px;
+            padding: 14px 22px;
+
+            border-radius: 10px;
+
             text-decoration: none;
+
             font-weight: 700;
-            transition: 0.25s;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
         }
 
-        .btn-whatsapp {
-            background: #25D366;
+        .btn-primary {
+            background: var(--blue);
             color: white;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+
+            box-shadow:
+                0 10px 30px
+                rgba(59,130,246,0.25);
         }
 
-        .btn-whatsapp:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            background: #20bd5a;
+
+            background: #2563eb;
         }
 
-        .btn-secondary {
-            background: white;
-            color: #075E54;
-            border: 2px solid #075E54;
+        .btn-outline {
+            border: 1px solid var(--border);
+
+            color: white;
+
+            background: rgba(255,255,255,0.02);
         }
 
-        .btn-secondary:hover {
+        .btn-outline:hover {
+            border-color: var(--blue);
+
             transform: translateY(-3px);
         }
 
-        /* SECTIONS */
+        /* =========================
+           CODE CARD
+        ========================= */
+
+        .code-card {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.3);
+
+            transform: rotate(2deg);
+
+            transition: 0.4s;
+        }
+
+        .code-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .code-top {
+            display: flex;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: #334155;
+        }
+
+        .code {
+            font-family: Consolas, monospace;
+
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            line-height: 2;
+        }
+
+        .code .blue {
+            color: #60a5fa;
+        }
+
+        .code .white {
+            color: white;
+        }
+
+        .code .green {
+            color: #86efac;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            padding: 85px 20px;
+            padding: 100px 25px;
         }
 
         .container {
-            max-width: 1050px;
+            max-width: 1150px;
             margin: auto;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
+        .section-header {
+            margin-bottom: 50px;
         }
 
-        .section-title h2 {
-            font-size: 36px;
+        .section-label {
+            color: var(--blue-light);
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
             margin-bottom: 10px;
         }
 
-        .section-title p {
-            color: #6b7280;
+        .section-header h2 {
+            font-size: 42px;
+
+            letter-spacing: -1.5px;
         }
 
-        /* ABOUT */
+        .section-header p {
+            color: var(--muted);
+
+            margin-top: 10px;
+
+            max-width: 650px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            background: white;
+            background: var(--bg2);
         }
 
-        .about-box {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
         }
 
-        .about-box p {
-            font-size: 18px;
-            color: #555;
+        .about-text {
+            color: #aab4c3;
+
+            font-size: 17px;
         }
 
-        /* PROJECTS */
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .stat {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 25px;
+
+            border-radius: 14px;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-size: 25px;
+
+            color: white;
+
+            margin-bottom: 5px;
+        }
+
+        .stat span {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
         }
 
         .project {
-            background: white;
-            border-radius: 18px;
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
             padding: 28px;
-            border: 1px solid #e5e7eb;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .project::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background: var(--blue);
+
+            transform: scaleX(0);
+
+            transform-origin: left;
+
             transition: 0.3s;
         }
 
         .project:hover {
             transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+
+            border-color: #2b3c55;
+        }
+
+        .project:hover::before {
+            transform: scaleX(1);
         }
 
         .project-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: rgba(59,130,246,0.1);
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
         }
 
         .project h3 {
+            font-size: 21px;
+
             margin-bottom: 10px;
-            font-size: 22px;
         }
 
         .project p {
-            color: #666;
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
         }
 
         .project a {
-            display: inline-block;
-            margin-top: 18px;
-            color: #075E54;
-            font-weight: bold;
+            color: var(--blue-light);
+
             text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
         }
 
-        /* CONTACT */
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background: var(--bg2);
+        }
+
+        .skills-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 12px 18px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 8px;
+
+            color: #cbd5e1;
+
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .skill:hover {
+            border-color: var(--blue);
+
+            color: white;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
-            background: #075E54;
-            color: white;
             text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(59,130,246,0.12),
+                    transparent 45%
+                );
         }
 
         .contact h2 {
-            font-size: 38px;
+            font-size: clamp(35px, 6vw, 58px);
+
+            letter-spacing: -2px;
+
             margin-bottom: 15px;
         }
 
         .contact p {
+            color: var(--muted);
+
             max-width: 600px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+
+            margin:
+                0 auto
+                30px;
         }
 
-        .contact .btn-whatsapp {
-            background: white;
-            color: #075E54;
+        .whatsapp {
+            background: #25D366;
+
+            color: white;
+
+            box-shadow:
+                0 10px 35px
+                rgba(37,211,102,0.18);
         }
 
-        /* FOOTER */
+        .whatsapp:hover {
+            transform: translateY(-4px);
+
+            background: #20bd5a;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #063f38;
-            color: white;
+            border-top: 1px solid var(--border);
+
+            padding: 30px 20px;
+
             text-align: center;
-            padding: 25px 20px;
+
+            color: #64748b;
+
+            font-size: 13px;
         }
 
-        footer p {
-            opacity: 0.8;
-        }
+        /* =========================
+           MOBILE
+        ========================= */
 
-        /* MOBILE */
-
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
 
             .nav-links {
                 display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .code-card {
+                transform: none;
+
+                max-width: 500px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
             .projects {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                min-height: 90vh;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
             section {
-                padding: 65px 20px;
+                padding: 75px 20px;
             }
         }
 
-        /* ANIMATION */
+        @media (max-width: 500px) {
 
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+            .hero {
+                padding-top: 120px;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 34px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
             }
         }
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVIGATION -->
 
-    <nav>
-        <div class="nav-container">
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header>
+
+        <nav class="nav">
 
             <div class="logo">
-                Fawenbert Régis
+                Fawenbert<span>.</span>
             </div>
 
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#accueil">Accueil</a>
+                </li>
+
+                <li>
+                    <a href="#apropos">À propos</a>
+                </li>
+
+                <li>
+                    <a href="#projets">Projets</a>
+                </li>
+
+                <li>
+                    <a href="#competences">Compétences</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
-        </div>
-    </nav>
+        </nav>
+
+    </header>
 
 
-    <!-- ACCUEIL -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero" id="accueil">
 
-        <div class="hero-content fade-in">
+        <div class="hero-container">
 
-            <div class="badge">
-                💻 Développeur & Créateur
+            <div class="hero-content reveal">
+
+                <div class="small-title">
+                    Développeur & Créateur
+                </div>
+
+                <h1>
+                    Je transforme<br>
+                    des idées en<br>
+                    <span>solutions numériques.</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Je suis <strong>Fawenbert Régis</strong>,
+                    développeur et créateur de projets numériques.
+                    Je conçois des plateformes web modernes,
+                    utiles et accessibles.
+
+                </p>
+
+                <div class="buttons">
+
+                    <a
+                        href="#projets"
+                        class="btn btn-primary"
+                    >
+                        🚀 Découvrir mes projets
+                    </a>
+
+                    <a
+                        href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-outline"
+                    >
+                        💬 Me contacter
+                    </a>
+
+                </div>
+
             </div>
 
-            <h1>
-                Bonjour, je suis<br>
-                <span>Fawenbert Régis</span>
-            </h1>
 
-            <p>
-                Je crée des sites web, des applications et des solutions
-                numériques destinées à répondre à des problèmes réels.
-            </p>
+            <!-- CODE CARD -->
 
-            <div class="buttons">
+            <div class="code-card reveal">
 
-                <a
-                    class="btn btn-whatsapp"
-                    href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20site%20et%20j%27aimerais%20discuter%20avec%20toi."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    💬 Me contacter sur WhatsApp
-                </a>
+                <div class="code-top">
 
-                <a
-                    class="btn btn-secondary"
-                    href="#projets"
-                >
-                    🚀 Voir mes projets
-                </a>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+
+                <div class="code">
+
+                    <div>
+                        <span class="blue">const</span>
+                        <span class="white"> developer</span>
+                        =
+                        <span class="green">
+                            "Fawenbert Régis";
+                        </span>
+                    </div>
+
+                    <div>
+                        <span class="blue">const</span>
+                        <span class="white"> passion</span>
+                        =
+                        <span class="green">
+                            "Créer";
+                        </span>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <span class="blue">function</span>
+                        <span class="white">
+                            buildFuture()
+                        </span>
+                        {
+                    </div>
+
+                    <div style="padding-left:20px">
+
+                        return
+
+                        <span class="green">
+                            "Innovation";
+                        </span>
+
+                    </div>
+
+                    <div>
+                        }
+                    </div>
+
+                </div>
 
             </div>
 
@@ -395,34 +889,75 @@
     </section>
 
 
-    <!-- À PROPOS -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
     <section class="about" id="apropos">
 
         <div class="container">
 
-            <div class="section-title">
-                <h2>À propos de moi</h2>
-                <p>Quelques mots sur mon parcours</p>
+            <div class="section-header reveal">
+
+                <div class="section-label">
+                    À propos
+                </div>
+
+                <h2>
+                    Qui suis-je ?
+                </h2>
+
             </div>
 
-            <div class="about-box">
 
-                <p>
-                    Je suis <strong>Fawenbert Régis</strong>, développeur
-                    et créateur de projets numériques.
-                    Je m'intéresse particulièrement à la création de
-                    solutions web modernes, utiles et accessibles.
-                </p>
+            <div class="about-grid">
 
-                <br>
+                <div class="about-text reveal">
 
-                <p>
-                    Mon objectif est de continuer à développer mes
-                    compétences et de transformer mes idées en véritables
-                    projets pouvant être utilisés par les étudiants,
-                    les entreprises et le grand public.
-                </p>
+                    <p>
+                        Je suis <strong>Fawenbert Régis</strong>,
+                        développeur et créateur de solutions
+                        numériques.
+                    </p>
+
+                    <p>
+                        J'aime transformer des idées en projets
+                        concrets et créer des expériences web
+                        simples, modernes et accessibles.
+                    </p>
+
+                    <p>
+                        À travers mes différents projets, je cherche
+                        constamment à apprendre, expérimenter et
+                        construire des outils utiles.
+                    </p>
+
+                </div>
+
+
+                <div class="stats reveal">
+
+                    <div class="stat">
+                        <strong>💻</strong>
+                        <span>Développement web</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>🚀</strong>
+                        <span>Création de projets</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>📚</strong>
+                        <span>Solutions éducatives</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>⚡</strong>
+                        <span>Innovation numérique</span>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -431,18 +966,27 @@
     </section>
 
 
-    <!-- PROJETS -->
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
     <section id="projets">
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-header reveal">
 
-                <h2>Mes projets</h2>
+                <div class="section-label">
+                    Portfolio
+                </div>
+
+                <h2>
+                    Mes projets
+                </h2>
 
                 <p>
-                    Quelques projets que j'ai créés
+                    Découvrez quelques-unes des plateformes
+                    et solutions que j'ai développées.
                 </p>
 
             </div>
@@ -450,9 +994,10 @@
 
             <div class="projects">
 
-                <!-- PROJET 1 -->
 
-                <div class="project">
+                <!-- EXAMQUIZ -->
+
+                <article class="project reveal">
 
                     <div class="project-icon">
                         📚
@@ -463,9 +1008,9 @@
                     </h3>
 
                     <p>
-                        Une plateforme éducative permettant aux élèves
-                        de tester leurs connaissances et de se préparer
-                        à différents examens.
+                        Plateforme éducative permettant aux
+                        étudiants de tester leurs connaissances
+                        et de préparer leurs examens.
                     </p>
 
                     <a
@@ -473,15 +1018,15 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Visiter le projet →
+                        Voir le projet →
                     </a>
 
-                </div>
+                </article>
 
 
-                <!-- PROJET 2 -->
+                <!-- KONKOU -->
 
-                <div class="project">
+                <article class="project reveal">
 
                     <div class="project-icon">
                         🏆
@@ -492,8 +1037,9 @@
                     </h3>
 
                     <p>
-                        Une plateforme de quiz conçue autour d'un système
-                        de compétition et de classement.
+                        Plateforme de quiz basée sur la
+                        compétition, les scores et les
+                        classements.
                     </p>
 
                     <a
@@ -501,15 +1047,15 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Visiter le projet →
+                        Voir le projet →
                     </a>
 
-                </div>
+                </article>
 
 
-                <!-- PROJET 3 -->
+                <!-- GESTION ECOLE -->
 
-                <div class="project">
+                <article class="project reveal">
 
                     <div class="project-icon">
                         🏫
@@ -520,15 +1066,83 @@
                     </h3>
 
                     <p>
-                        Un projet de plateforme destinée à faciliter
-                        la gestion des élèves, professeurs, classes
-                        et informations scolaires.
+                        Solution numérique destinée à faciliter
+                        la gestion des élèves, professeurs,
+                        classes et informations scolaires.
                     </p>
 
                     <a href="#contact">
-                        Me contacter →
+                        En savoir plus →
                     </a>
 
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPETENCES
+    ========================= -->
+
+    <section class="skills" id="competences">
+
+        <div class="container">
+
+            <div class="section-header reveal">
+
+                <div class="section-label">
+                    Expertise
+                </div>
+
+                <h2>
+                    Ce que je fais
+                </h2>
+
+                <p>
+                    Quelques domaines dans lesquels je développe
+                    mes projets.
+                </p>
+
+            </div>
+
+
+            <div class="skills-list reveal">
+
+                <div class="skill">
+                    Développement web
+                </div>
+
+                <div class="skill">
+                    Applications web
+                </div>
+
+                <div class="skill">
+                    Interfaces modernes
+                </div>
+
+                <div class="skill">
+                    Bases de données
+                </div>
+
+                <div class="skill">
+                    API
+                </div>
+
+                <div class="skill">
+                    PWA
+                </div>
+
+                <div class="skill">
+                    Solutions éducatives
+                </div>
+
+                <div class="skill">
+                    Projets numériques
                 </div>
 
             </div>
@@ -538,28 +1152,35 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section class="contact" id="contact">
 
-        <div class="container">
+        <div class="container reveal">
+
+            <div class="section-label">
+                Contact
+            </div>
 
             <h2>
-                Parlons de ton projet
+                Vous avez un projet ?
             </h2>
 
             <p>
-                Tu as une idée, une question ou un projet numérique ?
-                Contacte-moi directement sur WhatsApp.
+                Une idée, une question ou un projet numérique ?
+                Écrivez-moi directement sur WhatsApp.
             </p>
 
+
             <a
-                class="btn btn-whatsapp"
-                href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20site%20et%20j%27aimerais%20discuter%20avec%20toi."
+                href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
                 target="_blank"
                 rel="noopener noreferrer"
+                class="btn whatsapp"
             >
-                💬 Ouvrir WhatsApp
+                💬 Discuter sur WhatsApp
             </a>
 
         </div>
@@ -567,33 +1188,62 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         <p>
-            © 2026 Fawenbert Régis — Tous droits réservés.
-        </p>
-
-        <p>
-            Développeur & Créateur
+            © 2026 Fawenbert Régis.
+            Tous droits réservés.
         </p>
 
     </footer>
 
 
-    <!-- SCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
-        // Animation simple au chargement
-        document.addEventListener("DOMContentLoaded", () => {
+        const elements =
+            document.querySelectorAll(".reveal");
 
-            document.body.classList.add("loaded");
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        elements.forEach(element => {
+
+            observer.observe(element);
 
         });
 
     </script>
+
 
 </body>
 </html>
