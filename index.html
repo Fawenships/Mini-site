@@ -16,10 +16,6 @@
 
     <style>
 
-        /* =====================================================
-           RESET
-        ===================================================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -42,1135 +38,566 @@
             background: #080b10;
             color: #f5f7fa;
             line-height: 1.6;
-
             overflow-x: hidden;
         }
 
-
-        /* =====================================================
-           VARIABLES
-        ===================================================== */
-
         :root {
-
             --background: #080b10;
             --background-secondary: #0d1117;
-
             --surface: #11161e;
             --surface-hover: #151b24;
-
             --border: #202833;
-
             --text: #f5f7fa;
             --text-secondary: #a6afbd;
-
             --blue: #3b82f6;
             --blue-light: #60a5fa;
             --blue-dark: #2563eb;
         }
 
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
+        /* HEADER */
 
         header {
-
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
-
             z-index: 1000;
-
-            background:
-                rgba(8, 11, 16, 0.90);
-
-            backdrop-filter:
-                blur(16px);
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.06);
+            background: rgba(8, 11, 16, 0.90);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-
 
         .navigation {
-
             max-width: 1150px;
-
             margin: auto;
-
-            padding:
-                18px 25px;
-
+            padding: 18px 25px;
             display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                center;
+            justify-content: space-between;
+            align-items: center;
         }
-
 
         .logo {
-
             color: white;
-
             font-size: 21px;
-
             font-weight: 800;
-
-            letter-spacing:
-                -0.5px;
-
-            text-decoration:
-                none;
+            letter-spacing: -0.5px;
+            text-decoration: none;
         }
-
 
         .logo span {
-
-            color:
-                var(--blue-light);
+            color: var(--blue-light);
         }
 
-
         .nav-links {
-
             list-style: none;
-
             display: flex;
-
             gap: 30px;
         }
 
-
         .nav-links a {
-
-            color:
-                #aeb7c5;
-
-            text-decoration:
-                none;
-
+            color: #aeb7c5;
+            text-decoration: none;
             font-size: 14px;
-
             font-weight: 600;
-
-            transition:
-                color 0.25s ease;
+            transition: color 0.25s ease;
         }
-
 
         .nav-links a:hover {
-
-            color:
-                white;
+            color: white;
         }
 
-
-        /* =====================================================
-           HERO
-        ===================================================== */
+        /* HERO */
 
         .hero {
-
-            min-height:
-                100vh;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            padding:
-                150px 25px 100px;
-
-            position:
-                relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 25px 100px;
+            position: relative;
         }
-
 
         .hero-container {
-
-            width:
-                100%;
-
-            max-width:
-                1150px;
-
-            margin:
-                auto;
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1.25fr 0.75fr;
-
-            gap:
-                80px;
-
-            align-items:
-                center;
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 80px;
+            align-items: center;
         }
-
 
         .hero-label {
-
-            color:
-                var(--blue-light);
-
-            font-size:
-                13px;
-
-            font-weight:
-                700;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                2px;
-
-            margin-bottom:
-                22px;
+            color: var(--blue-light);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
         }
-
 
         .hero h1 {
-
-            font-size:
-                clamp(45px, 7vw, 76px);
-
-            line-height:
-                1.02;
-
-            letter-spacing:
-                -3px;
-
-            margin-bottom:
-                25px;
+            font-size: clamp(45px, 7vw, 76px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
         }
-
 
         .hero h1 span {
-
-            color:
-                var(--blue-light);
+            color: var(--blue-light);
         }
-
 
         .hero-description {
-
-            color:
-                var(--text-secondary);
-
-            font-size:
-                18px;
-
-            max-width:
-                650px;
-
-            margin-bottom:
-                35px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 35px;
         }
 
-
-        /* =====================================================
-           BUTTONS
-        ===================================================== */
+        /* BUTTONS */
 
         .buttons {
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
         }
-
 
         .button {
-
-            display:
-                inline-flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                13px 21px;
-
-            border-radius:
-                8px;
-
-            text-decoration:
-                none;
-
-            font-size:
-                14px;
-
-            font-weight:
-                700;
-
-            transition:
-                all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s ease;
         }
-
 
         .button-primary {
-
-            background:
-                var(--blue);
-
-            color:
-                white;
+            background: var(--blue);
+            color: white;
         }
-
 
         .button-primary:hover {
-
-            background:
-                var(--blue-dark);
-
-            transform:
-                translateY(-2px);
+            background: var(--blue-dark);
+            transform: translateY(-2px);
         }
-
 
         .button-secondary {
-
-            background:
-                transparent;
-
-            color:
-                white;
-
-            border:
-                1px solid var(--border);
+            background: transparent;
+            color: white;
+            border: 1px solid var(--border);
         }
-
 
         .button-secondary:hover {
-
-            border-color:
-                var(--blue);
-
-            transform:
-                translateY(-2px);
+            border-color: var(--blue);
+            transform: translateY(-2px);
         }
 
-
-        /* =====================================================
-           CODE WINDOW
-        ===================================================== */
+        /* CODE WINDOW */
 
         .code-window {
-
-            background:
-                #0e131a;
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                14px;
-
-            overflow:
-                hidden;
-
-            box-shadow:
-                0 30px 70px rgba(0,0,0,0.35);
+            background: #0e131a;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.35);
         }
-
 
         .window-header {
-
-            height:
-                45px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            padding:
-                0 16px;
-
-            border-bottom:
-                1px solid var(--border);
-
-            background:
-                #0b0f15;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            border-bottom: 1px solid var(--border);
+            background: #0b0f15;
         }
-
 
         .window-title {
-
-            color:
-                #697586;
-
-            font-size:
-                12px;
-
-            margin:
-                auto;
+            color: #697586;
+            font-size: 12px;
+            margin: auto;
         }
-
 
         .window-dot {
-
-            width:
-                8px;
-
-            height:
-                8px;
-
-            border-radius:
-                50%;
-
-            background:
-                #394454;
-
-            margin-right:
-                7px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #394454;
+            margin-right: 7px;
         }
-
 
         .code-content {
-
-            padding:
-                25px;
-
-            font-family:
-                Consolas,
-                "Courier New",
-                monospace;
-
-            font-size:
-                13px;
-
-            line-height:
-                2;
+            padding: 25px;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 13px;
+            line-height: 2;
         }
-
 
         .code-blue {
-            color:
-                #60a5fa;
+            color: #60a5fa;
         }
-
 
         .code-white {
-            color:
-                #e5e7eb;
+            color: #e5e7eb;
         }
-
 
         .code-gray {
-            color:
-                #7c8798;
+            color: #7c8798;
         }
 
-
-        /* =====================================================
-           SECTIONS
-        ===================================================== */
+        /* SECTIONS */
 
         section {
-
-            padding:
-                100px 25px;
+            padding: 100px 25px;
         }
-
 
         .container {
-
-            max-width:
-                1150px;
-
-            margin:
-                auto;
+            max-width: 1150px;
+            margin: auto;
         }
-
 
         .section-label {
-
-            color:
-                var(--blue-light);
-
-            font-size:
-                12px;
-
-            font-weight:
-                800;
-
-            letter-spacing:
-                2px;
-
-            text-transform:
-                uppercase;
-
-            margin-bottom:
-                10px;
+            color: var(--blue-light);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
-
 
         .section-title {
-
-            font-size:
-                42px;
-
-            line-height:
-                1.15;
-
-            letter-spacing:
-                -1.5px;
-
-            margin-bottom:
-                12px;
+            font-size: 42px;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
         }
-
 
         .section-description {
-
-            color:
-                var(--text-secondary);
-
-            max-width:
-                650px;
-
-            font-size:
-                16px;
+            color: var(--text-secondary);
+            max-width: 650px;
+            font-size: 16px;
         }
 
-
-        /* =====================================================
-           ABOUT
-        ===================================================== */
+        /* ABOUT */
 
         .about {
-
-            background:
-                var(--background-secondary);
+            background: var(--background-secondary);
         }
-
 
         .about-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap:
-                70px;
-
-            margin-top:
-                50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            margin-top: 50px;
         }
-
 
         .about-text {
-
-            color:
-                var(--text-secondary);
-
-            font-size:
-                17px;
+            color: var(--text-secondary);
+            font-size: 17px;
         }
-
 
         .about-text p {
-
-            margin-bottom:
-                18px;
+            margin-bottom: 18px;
         }
-
 
         .about-text strong {
-
-            color:
-                white;
+            color: white;
         }
-
 
         .information {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap:
-                14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
         }
-
 
         .information-card {
-
-            padding:
-                23px;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                10px;
-
-            transition:
-                0.25s ease;
+            padding: 23px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: 0.25s ease;
         }
-
 
         .information-card:hover {
-
-            border-color:
-                #334155;
-
-            transform:
-                translateY(-3px);
+            border-color: #334155;
+            transform: translateY(-3px);
         }
-
 
         .information-card strong {
-
-            display:
-                block;
-
-            color:
-                white;
-
-            font-size:
-                17px;
-
-            margin-bottom:
-                5px;
+            display: block;
+            color: white;
+            font-size: 17px;
+            margin-bottom: 5px;
         }
-
 
         .information-card span {
-
-            color:
-                var(--text-secondary);
-
-            font-size:
-                13px;
+            color: var(--text-secondary);
+            font-size: 13px;
         }
 
-
-        /* =====================================================
-           PROJECTS
-        ===================================================== */
+        /* PROJECTS */
 
         .projects {
-
-            margin-top:
-                50px;
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap:
-                20px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
-
 
         .project {
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                12px;
-
-            padding:
-                28px;
-
-            transition:
-                0.3s ease;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s ease;
         }
-
 
         .project:hover {
-
-            transform:
-                translateY(-6px);
-
-            border-color:
-                #344256;
+            transform: translateY(-6px);
+            border-color: #344256;
         }
-
 
         .project-number {
-
-            color:
-                var(--blue-light);
-
-            font-family:
-                Consolas,
-                monospace;
-
-            font-size:
-                13px;
-
-            margin-bottom:
-                22px;
+            color: var(--blue-light);
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            margin-bottom: 22px;
         }
-
 
         .project h3 {
-
-            font-size:
-                21px;
-
-            margin-bottom:
-                10px;
+            font-size: 21px;
+            margin-bottom: 10px;
         }
-
 
         .project p {
-
-            color:
-                var(--text-secondary);
-
-            font-size:
-                14px;
-
-            margin-bottom:
-                23px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 23px;
         }
-
 
         .project-link {
-
-            color:
-                var(--blue-light);
-
-            text-decoration:
-                none;
-
-            font-size:
-                14px;
-
-            font-weight:
-                700;
+            display: inline-block;
+            color: var(--blue-light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 7px;
+            transition: 0.25s;
         }
-
 
         .project-link:hover {
-
-            color:
-                white;
+            color: white;
+            border-color: var(--blue);
+            background: rgba(59,130,246,0.08);
         }
 
-
-        /* =====================================================
-           SERVICES
-        ===================================================== */
+        /* SERVICES */
 
         .services {
-
-            background:
-                var(--background-secondary);
+            background: var(--background-secondary);
         }
-
 
         .services-grid {
-
-            margin-top:
-                50px;
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap:
-                20px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
-
 
         .service {
-
-            padding:
-                27px;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                10px;
+            padding: 27px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
         }
-
 
         .service h3 {
-
-            font-size:
-                18px;
-
-            margin-bottom:
-                10px;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
-
 
         .service p {
-
-            color:
-                var(--text-secondary);
-
-            font-size:
-                14px;
+            color: var(--text-secondary);
+            font-size: 14px;
         }
 
-
-        /* =====================================================
-           SKILLS
-        ===================================================== */
+        /* SKILLS */
 
         .skills-list {
-
-            margin-top:
-                40px;
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                10px;
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
 
         .skill {
-
-            padding:
-                10px 16px;
-
-            border:
-                1px solid var(--border);
-
-            background:
-                var(--surface);
-
-            border-radius:
-                7px;
-
-            color:
-                #c4ccd7;
-
-            font-size:
-                13px;
-
-            transition:
-                0.25s;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            border-radius: 7px;
+            color: #c4ccd7;
+            font-size: 13px;
+            transition: 0.25s;
         }
-
 
         .skill:hover {
-
-            color:
-                white;
-
-            border-color:
-                var(--blue);
+            color: white;
+            border-color: var(--blue);
         }
 
-
-        /* =====================================================
-           CONTACT
-        ===================================================== */
+        /* CONTACT */
 
         .contact {
-
-            text-align:
-                center;
-
-            border-top:
-                1px solid var(--border);
+            text-align: center;
+            border-top: 1px solid var(--border);
         }
-
 
         .contact .container {
-
-            max-width:
-                750px;
+            max-width: 750px;
         }
-
 
         .contact .section-title {
-
-            font-size:
-                clamp(36px, 6vw, 55px);
+            font-size: clamp(36px, 6vw, 55px);
         }
-
 
         .contact-text {
-
-            color:
-                var(--text-secondary);
-
-            margin:
-                15px auto 30px;
-
-            font-size:
-                16px;
+            color: var(--text-secondary);
+            margin: 15px auto 30px;
+            font-size: 16px;
         }
 
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+        /* FOOTER */
 
         footer {
-
-            border-top:
-                1px solid var(--border);
-
-            padding:
-                28px 20px;
-
-            text-align:
-                center;
-
-            color:
-                #697586;
-
-            font-size:
-                13px;
+            border-top: 1px solid var(--border);
+            padding: 28px 20px;
+            text-align: center;
+            color: #697586;
+            font-size: 13px;
         }
 
-
-        /* =====================================================
-           ANIMATION
-        ===================================================== */
+        /* ANIMATION */
 
         .reveal {
-
-            opacity:
-                0;
-
-            transform:
-                translateY(20px);
-
+            opacity: 0;
+            transform: translateY(20px);
             transition:
                 opacity 0.7s ease,
                 transform 0.7s ease;
         }
 
-
         .reveal.active {
-
-            opacity:
-                1;
-
-            transform:
-                translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
 
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
+        /* MOBILE */
 
         @media (max-width: 850px) {
 
             .nav-links {
-                display:
-                    none;
+                display: none;
             }
-
 
             .hero-container {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    45px;
+                grid-template-columns: 1fr;
+                gap: 45px;
             }
-
 
             .about-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-
 
             .projects {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
-
 
             .services-grid {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
-
 
             .hero {
-
-                padding-top:
-                    125px;
+                padding-top: 125px;
             }
-
 
             section {
-
-                padding:
-                    75px 20px;
+                padding: 75px 20px;
             }
-
         }
-
 
         @media (max-width: 500px) {
 
             .hero h1 {
-
-                font-size:
-                    44px;
-
-                letter-spacing:
-                    -2px;
+                font-size: 44px;
+                letter-spacing: -2px;
             }
-
 
             .hero-description {
-
-                font-size:
-                    16px;
+                font-size: 16px;
             }
-
 
             .buttons {
-
-                flex-direction:
-                    column;
+                flex-direction: column;
             }
-
 
             .button {
-
-                width:
-                    100%;
+                width: 100%;
             }
-
 
             .information {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
-
 
             .section-title {
-
-                font-size:
-                    34px;
+                font-size: 34px;
             }
-
 
             .code-content {
-
-                font-size:
-                    11px;
-
-                padding:
-                    20px;
+                font-size: 11px;
+                padding: 20px;
             }
-
         }
 
     </style>
 </head>
 
-
 <body>
 
 
-    <!-- =====================================================
-         NAVIGATION
-    ===================================================== -->
+    <!-- NAVIGATION -->
 
     <header>
 
         <nav class="navigation">
 
-            <a
-                href="#accueil"
-                class="logo"
-            >
+            <a href="#accueil" class="logo">
                 Fawenbert<span>.</span>
             </a>
-
 
             <ul class="nav-links">
 
                 <li>
-                    <a href="#accueil">
-                        Accueil
-                    </a>
+                    <a href="#accueil">Accueil</a>
                 </li>
 
                 <li>
-                    <a href="#apropos">
-                        À propos
-                    </a>
+                    <a href="#apropos">À propos</a>
                 </li>
 
                 <li>
-                    <a href="#projets">
-                        Projets
-                    </a>
+                    <a href="#projets">Projets</a>
                 </li>
 
                 <li>
-                    <a href="#services">
-                        Services
-                    </a>
+                    <a href="#services">Services</a>
                 </li>
 
                 <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
+                    <a href="#contact">Contact</a>
                 </li>
 
             </ul>
@@ -1180,17 +607,11 @@
     </header>
 
 
-    <!-- =====================================================
-         HERO
-    ===================================================== -->
+    <!-- HERO -->
 
-    <section
-        class="hero"
-        id="accueil"
-    >
+    <section class="hero" id="accueil">
 
         <div class="hero-container">
-
 
             <div class="reveal">
 
@@ -1198,23 +619,16 @@
                     Développeur & Créateur
                 </div>
 
-
                 <h1>
-
                     Fawenbert
                     <span>Régis</span>
-
                 </h1>
 
-
                 <p class="hero-description">
-
                     Je conçois et développe des solutions
                     numériques modernes pour transformer
                     des idées en projets concrets.
-
                 </p>
-
 
                 <div class="buttons">
 
@@ -1224,7 +638,6 @@
                     >
                         Voir mes projets
                     </a>
-
 
                     <a
                         href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
@@ -1240,8 +653,6 @@
             </div>
 
 
-            <!-- CODE -->
-
             <div class="code-window reveal">
 
                 <div class="window-header">
@@ -1256,55 +667,35 @@
 
                 </div>
 
-
                 <div class="code-content">
 
                     <div>
-                        <span class="code-blue">
-                            const
-                        </span>
-
-                        <span class="code-white">
-                            developer
-                        </span>
-
+                        <span class="code-blue">const</span>
+                        <span class="code-white"> developer</span>
                         =
                         <span class="code-blue">
                             "Fawenbert Régis";
                         </span>
                     </div>
 
-
                     <div>
-                        <span class="code-blue">
-                            const
-                        </span>
-
-                        <span class="code-white">
-                            role
-                        </span>
-
+                        <span class="code-blue">const</span>
+                        <span class="code-white"> role</span>
                         =
                         <span class="code-blue">
                             "Developer";
                         </span>
                     </div>
 
-
                     <br>
 
-
                     <div>
-                        <span class="code-blue">
-                            function
-                        </span>
-
+                        <span class="code-blue">function</span>
                         <span class="code-white">
                             createSolution()
                         </span>
                         {
                     </div>
-
 
                     <div style="padding-left:20px">
 
@@ -1317,7 +708,6 @@
                         </span>
 
                     </div>
-
 
                     <div>
                         }
@@ -1332,14 +722,9 @@
     </section>
 
 
-    <!-- =====================================================
-         ABOUT
-    ===================================================== -->
+    <!-- À PROPOS -->
 
-    <section
-        class="about"
-        id="apropos"
-    >
+    <section class="about" id="apropos">
 
         <div class="container">
 
@@ -1356,9 +741,7 @@
                 en solutions numériques concrètes.
             </p>
 
-
             <div class="about-grid">
-
 
                 <div class="about-text reveal">
 
@@ -1369,14 +752,12 @@
                         numériques.
                     </p>
 
-
                     <p>
                         Je m'intéresse à la création de
                         plateformes web, d'applications et
                         d'outils capables de répondre à
                         des besoins réels.
                     </p>
-
 
                     <p>
                         Chaque projet est pour moi une
@@ -1386,58 +767,26 @@
 
                 </div>
 
-
                 <div class="information reveal">
 
                     <div class="information-card">
-
-                        <strong>
-                            Développement
-                        </strong>
-
-                        <span>
-                            Solutions web modernes
-                        </span>
-
+                        <strong>Développement</strong>
+                        <span>Solutions web modernes</span>
                     </div>
 
-
                     <div class="information-card">
-
-                        <strong>
-                            Création
-                        </strong>
-
-                        <span>
-                            Projets numériques
-                        </span>
-
+                        <strong>Création</strong>
+                        <span>Projets numériques</span>
                     </div>
 
-
                     <div class="information-card">
-
-                        <strong>
-                            Éducation
-                        </strong>
-
-                        <span>
-                            Solutions pour étudiants
-                        </span>
-
+                        <strong>Éducation</strong>
+                        <span>Solutions pour étudiants</span>
                     </div>
 
-
                     <div class="information-card">
-
-                        <strong>
-                            Innovation
-                        </strong>
-
-                        <span>
-                            Transformer les idées
-                        </span>
-
+                        <strong>Innovation</strong>
+                        <span>Transformer les idées</span>
                     </div>
 
                 </div>
@@ -1449,13 +798,9 @@
     </section>
 
 
-    <!-- =====================================================
-         PROJECTS
-    ===================================================== -->
+    <!-- PROJETS -->
 
-    <section
-        id="projets"
-    >
+    <section id="projets">
 
         <div class="container">
 
@@ -1476,7 +821,7 @@
             <div class="projects">
 
 
-                <!-- PROJECT 01 -->
+                <!-- PROJET 01 -->
 
                 <article class="project reveal">
 
@@ -1507,7 +852,7 @@
                 </article>
 
 
-                <!-- PROJECT 02 -->
+                <!-- PROJET 02 -->
 
                 <article class="project reveal">
 
@@ -1537,7 +882,7 @@
                 </article>
 
 
-                <!-- PROJECT 03 -->
+                <!-- PROJET 03 -->
 
                 <article class="project reveal">
 
@@ -1546,21 +891,82 @@
                     </div>
 
                     <h3>
-                        Gestion scolaire
+                        Gestion École
                     </h3>
 
                     <p>
-                        Solution numérique destinée à
-                        faciliter la gestion des élèves,
-                        professeurs, classes et données
-                        scolaires.
+                        Tableau de bord et solution numérique
+                        destinée à faciliter la gestion des
+                        élèves, professeurs, classes et
+                        informations scolaires.
                     </p>
 
                     <a
-                        href="#contact"
+                        href="https://gestion-d-ecole-zdi5.onrender.com/admin.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         class="project-link"
                     >
-                        En savoir plus
+                        Tableau de bord
+                    </a>
+
+                </article>
+
+
+                <!-- PROJET 04 -->
+
+                <article class="project reveal">
+
+                    <div class="project-number">
+                        PROJECT / 04
+                    </div>
+
+                    <h3>
+                        La Grâce Solution
+                    </h3>
+
+                    <p>
+                        Projet web développé pour présenter
+                        une solution numérique et ses
+                        fonctionnalités.
+                    </p>
+
+                    <a
+                        href="https://fawenships.github.io/la-grace-solution/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        Visiter le projet
+                    </a>
+
+                </article>
+
+
+                <!-- PROJET 05 -->
+
+                <article class="project reveal">
+
+                    <div class="project-number">
+                        PROJECT / 05
+                    </div>
+
+                    <h3>
+                        Commande
+                    </h3>
+
+                    <p>
+                        Application web dédiée à la gestion
+                        et au traitement des commandes.
+                    </p>
+
+                    <a
+                        href="https://fawenships.github.io/commande/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                    >
+                        Visiter le projet
                     </a>
 
                 </article>
@@ -1573,14 +979,9 @@
     </section>
 
 
-    <!-- =====================================================
-         SERVICES
-    ===================================================== -->
+    <!-- SERVICES -->
 
-    <section
-        class="services"
-        id="services"
-    >
+    <section class="services" id="services">
 
         <div class="container">
 
@@ -1597,9 +998,7 @@
                 modernes et efficaces.
             </p>
 
-
             <div class="services-grid">
-
 
                 <div class="service reveal">
 
@@ -1650,9 +1049,7 @@
     </section>
 
 
-    <!-- =====================================================
-         COMPETENCES
-    ===================================================== -->
+    <!-- COMPÉTENCES -->
 
     <section>
 
@@ -1671,44 +1068,17 @@
                 mes projets.
             </p>
 
-
             <div class="skills-list reveal">
 
-                <div class="skill">
-                    HTML
-                </div>
-
-                <div class="skill">
-                    CSS
-                </div>
-
-                <div class="skill">
-                    JavaScript
-                </div>
-
-                <div class="skill">
-                    Node.js
-                </div>
-
-                <div class="skill">
-                    API
-                </div>
-
-                <div class="skill">
-                    PostgreSQL
-                </div>
-
-                <div class="skill">
-                    GitHub
-                </div>
-
-                <div class="skill">
-                    Applications web
-                </div>
-
-                <div class="skill">
-                    PWA
-                </div>
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">API</div>
+                <div class="skill">PostgreSQL</div>
+                <div class="skill">GitHub</div>
+                <div class="skill">Applications web</div>
+                <div class="skill">PWA</div>
 
             </div>
 
@@ -1717,14 +1087,9 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTACT
-    ===================================================== -->
+    <!-- CONTACT -->
 
-    <section
-        class="contact"
-        id="contact"
-    >
+    <section class="contact" id="contact">
 
         <div class="container reveal">
 
@@ -1732,22 +1097,19 @@
                 Contact
             </div>
 
-
             <h2 class="section-title">
                 Vous avez une idée ?
             </h2>
 
-
             <p class="contact-text">
 
                 Vous souhaitez discuter d'un projet,
-                poser une question ou simplement entrer
-                en contact avec moi ?
+                poser une question ou entrer en contact
+                avec moi ?
 
                 Écrivez-moi directement sur WhatsApp.
 
             </p>
-
 
             <a
                 href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
@@ -1763,9 +1125,7 @@
     </section>
 
 
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
@@ -1776,9 +1136,7 @@
     </footer>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ===================================================== -->
+    <!-- JAVASCRIPT -->
 
     <script>
 
@@ -1791,25 +1149,21 @@
 
                 (entries) => {
 
-                    entries.forEach(
-                        (entry) => {
+                    entries.forEach((entry) => {
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+                        if (entry.isIntersecting) {
 
-                                entry.target.classList.add(
-                                    "active"
-                                );
+                            entry.target.classList.add(
+                                "active"
+                            );
 
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
+                            observer.unobserve(
+                                entry.target
+                            );
 
                         }
-                    );
+
+                    });
 
                 },
 
@@ -1820,15 +1174,11 @@
             );
 
 
-        elements.forEach(
-            (element) => {
+        elements.forEach((element) => {
 
-                observer.observe(
-                    element
-                );
+            observer.observe(element);
 
-            }
-        );
+        });
 
     </script>
 
