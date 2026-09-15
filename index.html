@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fawenbert Régis — Développeur</title>
+    <title>Fawenbert Régis | Développeur</title>
 
-    <meta name="description"
-        content="Portfolio de Fawenbert Régis — Développeur et créateur de solutions numériques.">
+    <meta
+        name="description"
+        content="Portfolio officiel de Fawenbert Régis, développeur et créateur de solutions numériques."
+    >
 
-    <meta name="theme-color" content="#080b12">
+    <meta name="theme-color" content="#080b10">
 
     <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
 
         * {
             margin: 0;
@@ -33,695 +39,1083 @@
                 Arial,
                 sans-serif;
 
-            background: #080b12;
-            color: #ffffff;
+            background: #080b10;
+            color: #f5f7fa;
             line-height: 1.6;
+
             overflow-x: hidden;
         }
 
-        /* =========================
+
+        /* =====================================================
            VARIABLES
-        ========================= */
+        ===================================================== */
 
         :root {
-            --bg: #080b12;
-            --bg2: #0d111a;
-            --card: #111722;
-            --border: #202938;
-            --text: #ffffff;
-            --muted: #9ca7b8;
+
+            --background: #080b10;
+            --background-secondary: #0d1117;
+
+            --surface: #11161e;
+            --surface-hover: #151b24;
+
+            --border: #202833;
+
+            --text: #f5f7fa;
+            --text-secondary: #a6afbd;
+
             --blue: #3b82f6;
             --blue-light: #60a5fa;
+            --blue-dark: #2563eb;
         }
 
-        /* =========================
-           NAVBAR
-        ========================= */
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
         header {
+
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
+
             z-index: 1000;
 
-            background: rgba(8, 11, 18, 0.82);
-            backdrop-filter: blur(16px);
+            background:
+                rgba(8, 11, 16, 0.90);
 
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter:
+                blur(16px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.06);
         }
 
-        .nav {
+
+        .navigation {
+
             max-width: 1150px;
+
             margin: auto;
-
-            padding: 18px 25px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--blue-light);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-            align-items: center;
 
             padding:
-                140px 25px
-                90px;
+                18px 25px;
 
-            position: relative;
-        }
-
-        /* lumière */
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            background: rgba(59,130,246,0.14);
-
-            filter: blur(120px);
-
-            border-radius: 50%;
-
-            top: 100px;
-            right: -150px;
-
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 1150px;
-            width: 100%;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-
-            gap: 70px;
-
-            align-items: center;
-        }
-
-        .small-title {
-            color: var(--blue-light);
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
-
-            line-height: 1.02;
-
-            letter-spacing: -3px;
-
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: var(--blue-light);
-        }
-
-        .hero-description {
-            color: var(--muted);
-
-            font-size: 18px;
-
-            max-width: 650px;
-
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 22px;
-
-            border-radius: 10px;
-
-            text-decoration: none;
-
-            font-weight: 700;
-
-            font-size: 14px;
-
-            transition: 0.3s;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 9px;
-        }
-
-        .btn-primary {
-            background: var(--blue);
-            color: white;
-
-            box-shadow:
-                0 10px 30px
-                rgba(59,130,246,0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-
-            background: #2563eb;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border);
-
-            color: white;
-
-            background: rgba(255,255,255,0.02);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--blue);
-
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           CODE CARD
-        ========================= */
-
-        .code-card {
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 18px;
-
-            padding: 22px;
-
-            box-shadow:
-                0 30px 80px
-                rgba(0,0,0,0.3);
-
-            transform: rotate(2deg);
-
-            transition: 0.4s;
-        }
-
-        .code-card:hover {
-            transform: rotate(0deg) translateY(-5px);
-        }
-
-        .code-top {
             display: flex;
 
-            gap: 7px;
+            justify-content:
+                space-between;
 
-            margin-bottom: 20px;
+            align-items:
+                center;
         }
 
-        .dot {
-            width: 10px;
-            height: 10px;
 
-            border-radius: 50%;
+        .logo {
 
-            background: #334155;
-        }
-
-        .code {
-            font-family: Consolas, monospace;
-
-            color: #94a3b8;
-
-            font-size: 14px;
-
-            line-height: 2;
-        }
-
-        .code .blue {
-            color: #60a5fa;
-        }
-
-        .code .white {
             color: white;
-        }
 
-        .code .green {
-            color: #86efac;
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 100px 25px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .section-header {
-            margin-bottom: 50px;
-        }
-
-        .section-label {
-            color: var(--blue-light);
-
-            text-transform: uppercase;
-
-            letter-spacing: 2px;
-
-            font-size: 12px;
+            font-size: 21px;
 
             font-weight: 800;
 
-            margin-bottom: 10px;
+            letter-spacing:
+                -0.5px;
+
+            text-decoration:
+                none;
         }
 
-        .section-header h2 {
-            font-size: 42px;
 
-            letter-spacing: -1.5px;
+        .logo span {
+
+            color:
+                var(--blue-light);
         }
 
-        .section-header p {
-            color: var(--muted);
 
-            margin-top: 10px;
+        .nav-links {
 
-            max-width: 650px;
+            list-style: none;
+
+            display: flex;
+
+            gap: 30px;
         }
 
-        /* =========================
-           ABOUT
-        ========================= */
 
-        .about {
-            background: var(--bg2);
-        }
+        .nav-links a {
 
-        .about-grid {
-            display: grid;
+            color:
+                #aeb7c5;
 
-            grid-template-columns: 1fr 1fr;
-
-            gap: 40px;
-        }
-
-        .about-text {
-            color: #aab4c3;
-
-            font-size: 17px;
-        }
-
-        .about-text p {
-            margin-bottom: 18px;
-        }
-
-        .stats {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 15px;
-        }
-
-        .stat {
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            padding: 25px;
-
-            border-radius: 14px;
-        }
-
-        .stat strong {
-            display: block;
-
-            font-size: 25px;
-
-            color: white;
-
-            margin-bottom: 5px;
-        }
-
-        .stat span {
-            color: var(--muted);
+            text-decoration:
+                none;
 
             font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                color 0.25s ease;
         }
 
-        /* =========================
+
+        .nav-links a:hover {
+
+            color:
+                white;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                150px 25px 100px;
+
+            position:
+                relative;
+        }
+
+
+        .hero-container {
+
+            width:
+                100%;
+
+            max-width:
+                1150px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.25fr 0.75fr;
+
+            gap:
+                80px;
+
+            align-items:
+                center;
+        }
+
+
+        .hero-label {
+
+            color:
+                var(--blue-light);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 7vw, 76px);
+
+            line-height:
+                1.02;
+
+            letter-spacing:
+                -3px;
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .hero h1 span {
+
+            color:
+                var(--blue-light);
+        }
+
+
+        .hero-description {
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                18px;
+
+            max-width:
+                650px;
+
+            margin-bottom:
+                35px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                13px;
+        }
+
+
+        .button {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                13px 21px;
+
+            border-radius:
+                8px;
+
+            text-decoration:
+                none;
+
+            font-size:
+                14px;
+
+            font-weight:
+                700;
+
+            transition:
+                all 0.25s ease;
+        }
+
+
+        .button-primary {
+
+            background:
+                var(--blue);
+
+            color:
+                white;
+        }
+
+
+        .button-primary:hover {
+
+            background:
+                var(--blue-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .button-secondary {
+
+            background:
+                transparent;
+
+            color:
+                white;
+
+            border:
+                1px solid var(--border);
+        }
+
+
+        .button-secondary:hover {
+
+            border-color:
+                var(--blue);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================================
+           CODE WINDOW
+        ===================================================== */
+
+        .code-window {
+
+            background:
+                #0e131a;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                14px;
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,0.35);
+        }
+
+
+        .window-header {
+
+            height:
+                45px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            padding:
+                0 16px;
+
+            border-bottom:
+                1px solid var(--border);
+
+            background:
+                #0b0f15;
+        }
+
+
+        .window-title {
+
+            color:
+                #697586;
+
+            font-size:
+                12px;
+
+            margin:
+                auto;
+        }
+
+
+        .window-dot {
+
+            width:
+                8px;
+
+            height:
+                8px;
+
+            border-radius:
+                50%;
+
+            background:
+                #394454;
+
+            margin-right:
+                7px;
+        }
+
+
+        .code-content {
+
+            padding:
+                25px;
+
+            font-family:
+                Consolas,
+                "Courier New",
+                monospace;
+
+            font-size:
+                13px;
+
+            line-height:
+                2;
+        }
+
+
+        .code-blue {
+            color:
+                #60a5fa;
+        }
+
+
+        .code-white {
+            color:
+                #e5e7eb;
+        }
+
+
+        .code-gray {
+            color:
+                #7c8798;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+
+            padding:
+                100px 25px;
+        }
+
+
+        .container {
+
+            max-width:
+                1150px;
+
+            margin:
+                auto;
+        }
+
+
+        .section-label {
+
+            color:
+                var(--blue-light);
+
+            font-size:
+                12px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .section-title {
+
+            font-size:
+                42px;
+
+            line-height:
+                1.15;
+
+            letter-spacing:
+                -1.5px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .section-description {
+
+            color:
+                var(--text-secondary);
+
+            max-width:
+                650px;
+
+            font-size:
+                16px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+
+            background:
+                var(--background-secondary);
+        }
+
+
+        .about-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                70px;
+
+            margin-top:
+                50px;
+        }
+
+
+        .about-text {
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                17px;
+        }
+
+
+        .about-text p {
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .about-text strong {
+
+            color:
+                white;
+        }
+
+
+        .information {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                14px;
+        }
+
+
+        .information-card {
+
+            padding:
+                23px;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                10px;
+
+            transition:
+                0.25s ease;
+        }
+
+
+        .information-card:hover {
+
+            border-color:
+                #334155;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .information-card strong {
+
+            display:
+                block;
+
+            color:
+                white;
+
+            font-size:
+                17px;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .information-card span {
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                13px;
+        }
+
+
+        /* =====================================================
            PROJECTS
-        ========================= */
+        ===================================================== */
 
         .projects {
-            display: grid;
+
+            margin-top:
+                50px;
+
+            display:
+                grid;
 
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 20px;
+            gap:
+                20px;
         }
+
 
         .project {
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 16px;
-
-            padding: 28px;
-
-            transition: 0.3s;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .project::before {
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            top: 0;
-
-            width: 100%;
-            height: 2px;
-
-            background: var(--blue);
-
-            transform: scaleX(0);
-
-            transform-origin: left;
-
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-7px);
-
-            border-color: #2b3c55;
-        }
-
-        .project:hover::before {
-            transform: scaleX(1);
-        }
-
-        .project-icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 12px;
-
-            background: rgba(59,130,246,0.1);
-
-            font-size: 23px;
-
-            margin-bottom: 20px;
-        }
-
-        .project h3 {
-            font-size: 21px;
-
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: var(--muted);
-
-            font-size: 14px;
-
-            margin-bottom: 20px;
-        }
-
-        .project a {
-            color: var(--blue-light);
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            font-weight: 700;
-        }
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills {
-            background: var(--bg2);
-        }
-
-        .skills-list {
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-        }
-
-        .skill {
-            padding: 12px 18px;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 8px;
-
-            color: #cbd5e1;
-
-            font-size: 14px;
-
-            transition: 0.25s;
-        }
-
-        .skill:hover {
-            border-color: var(--blue);
-
-            color: white;
-        }
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            text-align: center;
 
             background:
-                radial-gradient(
-                    circle at center,
-                    rgba(59,130,246,0.12),
-                    transparent 45%
-                );
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                12px;
+
+            padding:
+                28px;
+
+            transition:
+                0.3s ease;
         }
 
-        .contact h2 {
-            font-size: clamp(35px, 6vw, 58px);
 
-            letter-spacing: -2px;
+        .project:hover {
 
-            margin-bottom: 15px;
+            transform:
+                translateY(-6px);
+
+            border-color:
+                #344256;
         }
 
-        .contact p {
-            color: var(--muted);
 
-            max-width: 600px;
+        .project-number {
+
+            color:
+                var(--blue-light);
+
+            font-family:
+                Consolas,
+                monospace;
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .project h3 {
+
+            font-size:
+                21px;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .project p {
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                14px;
+
+            margin-bottom:
+                23px;
+        }
+
+
+        .project-link {
+
+            color:
+                var(--blue-light);
+
+            text-decoration:
+                none;
+
+            font-size:
+                14px;
+
+            font-weight:
+                700;
+        }
+
+
+        .project-link:hover {
+
+            color:
+                white;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+
+            background:
+                var(--background-secondary);
+        }
+
+
+        .services-grid {
+
+            margin-top:
+                50px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                20px;
+        }
+
+
+        .service {
+
+            padding:
+                27px;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                10px;
+        }
+
+
+        .service h3 {
+
+            font-size:
+                18px;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .service p {
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                14px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-list {
+
+            margin-top:
+                40px;
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+        }
+
+
+        .skill {
+
+            padding:
+                10px 16px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--surface);
+
+            border-radius:
+                7px;
+
+            color:
+                #c4ccd7;
+
+            font-size:
+                13px;
+
+            transition:
+                0.25s;
+        }
+
+
+        .skill:hover {
+
+            color:
+                white;
+
+            border-color:
+                var(--blue);
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            text-align:
+                center;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .contact .container {
+
+            max-width:
+                750px;
+        }
+
+
+        .contact .section-title {
+
+            font-size:
+                clamp(36px, 6vw, 55px);
+        }
+
+
+        .contact-text {
+
+            color:
+                var(--text-secondary);
 
             margin:
-                0 auto
-                30px;
+                15px auto 30px;
+
+            font-size:
+                16px;
         }
 
-        .whatsapp {
-            background: #25D366;
 
-            color: white;
-
-            box-shadow:
-                0 10px 35px
-                rgba(37,211,102,0.18);
-        }
-
-        .whatsapp:hover {
-            transform: translateY(-4px);
-
-            background: #20bd5a;
-        }
-
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
-            border-top: 1px solid var(--border);
 
-            padding: 30px 20px;
+            border-top:
+                1px solid var(--border);
 
-            text-align: center;
+            padding:
+                28px 20px;
 
-            color: #64748b;
+            text-align:
+                center;
 
-            font-size: 13px;
+            color:
+                #697586;
+
+            font-size:
+                13px;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
 
-        @media (max-width: 850px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .hero h1 {
-                letter-spacing: -2px;
-            }
-
-            .code-card {
-                transform: none;
-
-                max-width: 500px;
-
-                width: 100%;
-
-                margin: auto;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 75px 20px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .hero {
-                padding-top: 120px;
-            }
-
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .section-header h2 {
-                font-size: 34px;
-            }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* =========================
-           REVEAL
-        ========================= */
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
 
         .reveal {
-            opacity: 0;
 
-            transform: translateY(25px);
+            opacity:
+                0;
+
+            transform:
+                translateY(20px);
 
             transition:
                 opacity 0.7s ease,
                 transform 0.7s ease;
         }
 
-        .reveal.active {
-            opacity: 1;
 
-            transform: translateY(0);
+        .reveal.active {
+
+            opacity:
+                1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display:
+                    none;
+            }
+
+
+            .hero-container {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    45px;
+            }
+
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    40px;
+            }
+
+
+            .projects {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero {
+
+                padding-top:
+                    125px;
+            }
+
+
+            section {
+
+                padding:
+                    75px 20px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+
+                font-size:
+                    44px;
+
+                letter-spacing:
+                    -2px;
+            }
+
+
+            .hero-description {
+
+                font-size:
+                    16px;
+            }
+
+
+            .buttons {
+
+                flex-direction:
+                    column;
+            }
+
+
+            .button {
+
+                width:
+                    100%;
+            }
+
+
+            .information {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .section-title {
+
+                font-size:
+                    34px;
+            }
+
+
+            .code-content {
+
+                font-size:
+                    11px;
+
+                padding:
+                    20px;
+            }
+
         }
 
     </style>
@@ -731,38 +1125,52 @@
 <body>
 
 
-    <!-- =========================
+    <!-- =====================================================
          NAVIGATION
-    ========================= -->
+    ===================================================== -->
 
     <header>
 
-        <nav class="nav">
+        <nav class="navigation">
 
-            <div class="logo">
+            <a
+                href="#accueil"
+                class="logo"
+            >
                 Fawenbert<span>.</span>
-            </div>
+            </a>
+
 
             <ul class="nav-links">
 
                 <li>
-                    <a href="#accueil">Accueil</a>
+                    <a href="#accueil">
+                        Accueil
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#apropos">À propos</a>
+                    <a href="#apropos">
+                        À propos
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#projets">Projets</a>
+                    <a href="#projets">
+                        Projets
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#competences">Compétences</a>
+                    <a href="#services">
+                        Services
+                    </a>
                 </li>
 
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact">
+                        Contact
+                    </a>
                 </li>
 
             </ul>
@@ -772,51 +1180,59 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================= -->
+    ===================================================== -->
 
-    <section class="hero" id="accueil">
+    <section
+        class="hero"
+        id="accueil"
+    >
 
         <div class="hero-container">
 
-            <div class="hero-content reveal">
 
-                <div class="small-title">
+            <div class="reveal">
+
+                <div class="hero-label">
                     Développeur & Créateur
                 </div>
 
+
                 <h1>
-                    Je transforme<br>
-                    des idées en<br>
-                    <span>solutions numériques.</span>
+
+                    Fawenbert
+                    <span>Régis</span>
+
                 </h1>
+
 
                 <p class="hero-description">
 
-                    Je suis <strong>Fawenbert Régis</strong>,
-                    développeur et créateur de projets numériques.
-                    Je conçois des plateformes web modernes,
-                    utiles et accessibles.
+                    Je conçois et développe des solutions
+                    numériques modernes pour transformer
+                    des idées en projets concrets.
 
                 </p>
+
 
                 <div class="buttons">
 
                     <a
                         href="#projets"
-                        class="btn btn-primary"
+                        class="button button-primary"
                     >
-                        🚀 Découvrir mes projets
+                        Voir mes projets
                     </a>
+
 
                     <a
                         href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="btn btn-outline"
+                        class="button button-secondary"
                     >
-                        💬 Me contacter
+                        Me contacter
                     </a>
 
                 </div>
@@ -824,57 +1240,84 @@
             </div>
 
 
-            <!-- CODE CARD -->
+            <!-- CODE -->
 
-            <div class="code-card reveal">
+            <div class="code-window reveal">
 
-                <div class="code-top">
+                <div class="window-header">
 
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                    <div class="window-dot"></div>
+                    <div class="window-dot"></div>
+                    <div class="window-dot"></div>
+
+                    <div class="window-title">
+                        developer.js
+                    </div>
 
                 </div>
 
-                <div class="code">
+
+                <div class="code-content">
 
                     <div>
-                        <span class="blue">const</span>
-                        <span class="white"> developer</span>
+                        <span class="code-blue">
+                            const
+                        </span>
+
+                        <span class="code-white">
+                            developer
+                        </span>
+
                         =
-                        <span class="green">
+                        <span class="code-blue">
                             "Fawenbert Régis";
                         </span>
                     </div>
 
+
                     <div>
-                        <span class="blue">const</span>
-                        <span class="white"> passion</span>
+                        <span class="code-blue">
+                            const
+                        </span>
+
+                        <span class="code-white">
+                            role
+                        </span>
+
                         =
-                        <span class="green">
-                            "Créer";
+                        <span class="code-blue">
+                            "Developer";
                         </span>
                     </div>
 
+
                     <br>
 
+
                     <div>
-                        <span class="blue">function</span>
-                        <span class="white">
-                            buildFuture()
+                        <span class="code-blue">
+                            function
+                        </span>
+
+                        <span class="code-white">
+                            createSolution()
                         </span>
                         {
                     </div>
 
+
                     <div style="padding-left:20px">
 
-                        return
+                        <span class="code-gray">
+                            return
+                        </span>
 
-                        <span class="green">
+                        <span class="code-white">
                             "Innovation";
                         </span>
 
                     </div>
+
 
                     <div>
                         }
@@ -889,72 +1332,112 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          ABOUT
-    ========================= -->
+    ===================================================== -->
 
-    <section class="about" id="apropos">
+    <section
+        class="about"
+        id="apropos"
+    >
 
         <div class="container">
 
-            <div class="section-header reveal">
-
-                <div class="section-label">
-                    À propos
-                </div>
-
-                <h2>
-                    Qui suis-je ?
-                </h2>
-
+            <div class="section-label">
+                À propos
             </div>
+
+            <h2 class="section-title">
+                Construire. Apprendre. Innover.
+            </h2>
+
+            <p class="section-description">
+                Un développeur qui transforme ses idées
+                en solutions numériques concrètes.
+            </p>
 
 
             <div class="about-grid">
 
+
                 <div class="about-text reveal">
 
                     <p>
-                        Je suis <strong>Fawenbert Régis</strong>,
-                        développeur et créateur de solutions
+                        Je suis
+                        <strong>Fawenbert Régis</strong>,
+                        développeur et créateur de projets
                         numériques.
                     </p>
 
-                    <p>
-                        J'aime transformer des idées en projets
-                        concrets et créer des expériences web
-                        simples, modernes et accessibles.
-                    </p>
 
                     <p>
-                        À travers mes différents projets, je cherche
-                        constamment à apprendre, expérimenter et
-                        construire des outils utiles.
+                        Je m'intéresse à la création de
+                        plateformes web, d'applications et
+                        d'outils capables de répondre à
+                        des besoins réels.
+                    </p>
+
+
+                    <p>
+                        Chaque projet est pour moi une
+                        occasion d'apprendre, d'expérimenter
+                        et d'améliorer mes compétences.
                     </p>
 
                 </div>
 
 
-                <div class="stats reveal">
+                <div class="information reveal">
 
-                    <div class="stat">
-                        <strong>💻</strong>
-                        <span>Développement web</span>
+                    <div class="information-card">
+
+                        <strong>
+                            Développement
+                        </strong>
+
+                        <span>
+                            Solutions web modernes
+                        </span>
+
                     </div>
 
-                    <div class="stat">
-                        <strong>🚀</strong>
-                        <span>Création de projets</span>
+
+                    <div class="information-card">
+
+                        <strong>
+                            Création
+                        </strong>
+
+                        <span>
+                            Projets numériques
+                        </span>
+
                     </div>
 
-                    <div class="stat">
-                        <strong>📚</strong>
-                        <span>Solutions éducatives</span>
+
+                    <div class="information-card">
+
+                        <strong>
+                            Éducation
+                        </strong>
+
+                        <span>
+                            Solutions pour étudiants
+                        </span>
+
                     </div>
 
-                    <div class="stat">
-                        <strong>⚡</strong>
-                        <span>Innovation numérique</span>
+
+                    <div class="information-card">
+
+                        <strong>
+                            Innovation
+                        </strong>
+
+                        <span>
+                            Transformer les idées
+                        </span>
+
                     </div>
 
                 </div>
@@ -966,41 +1449,39 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          PROJECTS
-    ========================= -->
+    ===================================================== -->
 
-    <section id="projets">
+    <section
+        id="projets"
+    >
 
         <div class="container">
 
-            <div class="section-header reveal">
-
-                <div class="section-label">
-                    Portfolio
-                </div>
-
-                <h2>
-                    Mes projets
-                </h2>
-
-                <p>
-                    Découvrez quelques-unes des plateformes
-                    et solutions que j'ai développées.
-                </p>
-
+            <div class="section-label">
+                Portfolio
             </div>
+
+            <h2 class="section-title">
+                Projets sélectionnés
+            </h2>
+
+            <p class="section-description">
+                Découvrez quelques-unes des plateformes
+                que j'ai développées.
+            </p>
 
 
             <div class="projects">
 
 
-                <!-- EXAMQUIZ -->
+                <!-- PROJECT 01 -->
 
                 <article class="project reveal">
 
-                    <div class="project-icon">
-                        📚
+                    <div class="project-number">
+                        PROJECT / 01
                     </div>
 
                     <h3>
@@ -1008,28 +1489,30 @@
                     </h3>
 
                     <p>
-                        Plateforme éducative permettant aux
-                        étudiants de tester leurs connaissances
-                        et de préparer leurs examens.
+                        Plateforme éducative permettant
+                        aux étudiants de tester leurs
+                        connaissances et de se préparer
+                        aux examens.
                     </p>
 
                     <a
                         href="https://examquizhaiti.com"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="project-link"
                     >
-                        Voir le projet →
+                        Visiter le projet
                     </a>
 
                 </article>
 
 
-                <!-- KONKOU -->
+                <!-- PROJECT 02 -->
 
                 <article class="project reveal">
 
-                    <div class="project-icon">
-                        🏆
+                    <div class="project-number">
+                        PROJECT / 02
                     </div>
 
                     <h3>
@@ -1037,28 +1520,29 @@
                     </h3>
 
                     <p>
-                        Plateforme de quiz basée sur la
-                        compétition, les scores et les
-                        classements.
+                        Plateforme de quiz conçue autour
+                        de la compétition, des scores
+                        et des classements.
                     </p>
 
                     <a
                         href="https://konkouquizhaiti.com"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="project-link"
                     >
-                        Voir le projet →
+                        Visiter le projet
                     </a>
 
                 </article>
 
 
-                <!-- GESTION ECOLE -->
+                <!-- PROJECT 03 -->
 
                 <article class="project reveal">
 
-                    <div class="project-icon">
-                        🏫
+                    <div class="project-number">
+                        PROJECT / 03
                     </div>
 
                     <h3>
@@ -1066,13 +1550,17 @@
                     </h3>
 
                     <p>
-                        Solution numérique destinée à faciliter
-                        la gestion des élèves, professeurs,
-                        classes et informations scolaires.
+                        Solution numérique destinée à
+                        faciliter la gestion des élèves,
+                        professeurs, classes et données
+                        scolaires.
                     </p>
 
-                    <a href="#contact">
-                        En savoir plus →
+                    <a
+                        href="#contact"
+                        class="project-link"
+                    >
+                        En savoir plus
                     </a>
 
                 </article>
@@ -1085,48 +1573,121 @@
     </section>
 
 
-    <!-- =========================
-         COMPETENCES
-    ========================= -->
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
 
-    <section class="skills" id="competences">
+    <section
+        class="services"
+        id="services"
+    >
 
         <div class="container">
 
-            <div class="section-header reveal">
+            <div class="section-label">
+                Services
+            </div>
 
-                <div class="section-label">
-                    Expertise
+            <h2 class="section-title">
+                Ce que je développe
+            </h2>
+
+            <p class="section-description">
+                Des solutions pensées pour être simples,
+                modernes et efficaces.
+            </p>
+
+
+            <div class="services-grid">
+
+
+                <div class="service reveal">
+
+                    <h3>
+                        Sites web
+                    </h3>
+
+                    <p>
+                        Création de sites web modernes,
+                        rapides et adaptés aux téléphones.
+                    </p>
+
                 </div>
 
-                <h2>
-                    Ce que je fais
-                </h2>
 
-                <p>
-                    Quelques domaines dans lesquels je développe
-                    mes projets.
-                </p>
+                <div class="service reveal">
+
+                    <h3>
+                        Applications web
+                    </h3>
+
+                    <p>
+                        Développement de plateformes
+                        interactives adaptées aux besoins
+                        d'un projet.
+                    </p>
+
+                </div>
+
+
+                <div class="service reveal">
+
+                    <h3>
+                        Solutions numériques
+                    </h3>
+
+                    <p>
+                        Transformation d'une idée en
+                        solution numérique fonctionnelle.
+                    </p>
+
+                </div>
 
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMPETENCES
+    ===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-label">
+                Compétences
+            </div>
+
+            <h2 class="section-title">
+                Technologies & domaines
+            </h2>
+
+            <p class="section-description">
+                Les domaines que j'utilise pour construire
+                mes projets.
+            </p>
 
 
             <div class="skills-list reveal">
 
                 <div class="skill">
-                    Développement web
+                    HTML
                 </div>
 
                 <div class="skill">
-                    Applications web
+                    CSS
                 </div>
 
                 <div class="skill">
-                    Interfaces modernes
+                    JavaScript
                 </div>
 
                 <div class="skill">
-                    Bases de données
+                    Node.js
                 </div>
 
                 <div class="skill">
@@ -1134,15 +1695,19 @@
                 </div>
 
                 <div class="skill">
+                    PostgreSQL
+                </div>
+
+                <div class="skill">
+                    GitHub
+                </div>
+
+                <div class="skill">
+                    Applications web
+                </div>
+
+                <div class="skill">
                     PWA
-                </div>
-
-                <div class="skill">
-                    Solutions éducatives
-                </div>
-
-                <div class="skill">
-                    Projets numériques
                 </div>
 
             </div>
@@ -1152,11 +1717,14 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          CONTACT
-    ========================= -->
+    ===================================================== -->
 
-    <section class="contact" id="contact">
+    <section
+        class="contact"
+        id="contact"
+    >
 
         <div class="container reveal">
 
@@ -1164,13 +1732,20 @@
                 Contact
             </div>
 
-            <h2>
-                Vous avez un projet ?
+
+            <h2 class="section-title">
+                Vous avez une idée ?
             </h2>
 
-            <p>
-                Une idée, une question ou un projet numérique ?
+
+            <p class="contact-text">
+
+                Vous souhaitez discuter d'un projet,
+                poser une question ou simplement entrer
+                en contact avec moi ?
+
                 Écrivez-moi directement sur WhatsApp.
+
             </p>
 
 
@@ -1178,9 +1753,9 @@
                 href="https://wa.me/15084055521?text=Bonjour%20Régis%2C%20je%20viens%20de%20visiter%20ton%20portfolio%20et%20j%27aimerais%20discuter%20avec%20toi."
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn whatsapp"
+                class="button button-primary"
             >
-                💬 Discuter sur WhatsApp
+                Contacter Fawenbert Régis
             </a>
 
         </div>
@@ -1188,23 +1763,22 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          FOOTER
-    ========================= -->
+    ===================================================== -->
 
     <footer>
 
         <p>
-            © 2026 Fawenbert Régis.
-            Tous droits réservés.
+            © 2026 Fawenbert Régis. Tous droits réservés.
         </p>
 
     </footer>
 
 
-    <!-- =========================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================= -->
+    ===================================================== -->
 
     <script>
 
@@ -1215,17 +1789,27 @@
         const observer =
             new IntersectionObserver(
 
-                entries => {
+                (entries) => {
 
-                    entries.forEach(entry => {
+                    entries.forEach(
+                        (entry) => {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add("active");
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
 
@@ -1236,14 +1820,17 @@
             );
 
 
-        elements.forEach(element => {
+        elements.forEach(
+            (element) => {
 
-            observer.observe(element);
+                observer.observe(
+                    element
+                );
 
-        });
+            }
+        );
 
     </script>
-
 
 </body>
 </html>
