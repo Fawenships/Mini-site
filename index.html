@@ -29,7 +29,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(255,2
 .button{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border:1px solid #111;border-radius:5px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s ease}
 .button-primary{background:#111;color:#fff}.button-primary:hover{background:#333;transform:translateY(-2px)}
 .button-secondary{background:#fff;color:#111;border-color:#d6d6d6}.button-secondary:hover{border-color:#111;transform:translateY(-2px)}
-.hero-photo{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:center;border-radius:4px;display:block;filter:saturate(.82) contrast(1.02)}
+.hero-photo{width:100%;aspect-ratio:1.45/1;object-fit:cover;object-position:center;border-radius:4px;display:block;background:#eee}
 .photo-caption{margin-top:12px;color:#888;font-size:11px;letter-spacing:.4px}
 section{padding:105px 28px}.section-soft{background:var(--soft)}.container{max-width:1180px;margin:auto}
 .section-head{max-width:650px;margin-bottom:48px}
@@ -52,7 +52,8 @@ section{padding:105px 28px}.section-soft{background:var(--soft)}.container{max-w
 .skills-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}.skill{border:1px solid #ddd;padding:8px 13px;border-radius:3px;color:#555;font-size:12px;background:#fff}
 .contact{text-align:center;border-top:1px solid var(--line)}.contact .container{max-width:700px}.contact .section-title{font-size:clamp(40px,6vw,64px)}.contact-text{color:#666;margin:15px auto 28px}
 footer{border-top:1px solid var(--line);padding:28px;color:#888;font-size:12px;text-align:center}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}.reveal.active{opacity:1;transform:translateY(0)}
+/* Retrait temporaire de opacity:0 pour éviter l'écran blanc si le JS de défilement n'est pas chargé */
+.reveal{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 @media(max-width:850px){.nav-links{display:none}.hero{padding:120px 20px 70px;min-height:auto}.hero-container,.about-grid{grid-template-columns:1fr;gap:45px}.hero h1{font-size:55px}section{padding:75px 20px}.projects{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.service+.service{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:25px}}
 @media(max-width:500px){.navigation{padding:16px 18px}.hero h1{font-size:47px;letter-spacing:-3px}.buttons{flex-direction:column}.button{width:100%}.information{grid-template-columns:1fr}.information-card:nth-child(even){padding-left:0;border-left:0}.information-card{padding-right:0}.section-title{font-size:34px}}
 </style>
@@ -67,7 +68,10 @@ footer{border-top:1px solid var(--line);padding:28px;color:#888;font-size:12px;t
 <div class="reveal"><div class="eyebrow">Développeur & Créateur</div><h1>Fawenbert<br><span>Régis</span></h1>
 <p class="hero-description">Je conçois et développe des solutions numériques modernes pour transformer des idées en projets concrets.</p>
 <div class="buttons"><a href="#projets" class="button button-primary">Voir mes projets</a><a href="https://wa.me." target="_blank" rel="noopener noreferrer" class="button button-secondary">Me contacter</a></div></div>
-<div class="reveal"><img class="hero-photo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAZOCAADASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAAAgEDBAUABgcICf/EAFkQAAIBAwMDAwIEBAQDBQIAHwECAwAEEQUSIQYxQRMiUQdhFDJxgQgjQpEVUqGxFjNiJHKzwdFDcxclNFNjgoOSsuEJJjVERZPw8Rg2VHSjVWRldaI3tNL/xAAcAQADAQEBAQEBAAAAAAAAAAAAAQIDBAUGBwj/xAA3EQACAgEEAQMEAQMEAgICAgMAAQIRAwQSITEFE0FRBiIyYXEUI4EHM0KRFaEkUkOxNNHB4fD/2gAMAwEAAhEDEQA/AOO6CD/w/pmDj/scP/0AqxAYgbAQBUHp+RJOntNVFwRZwZ/+cFTjnn3Yr4+X5M+0g/tQ4gPIfzQtGC3FYjY4JzmiJCnk8UBuoBOxUjH3o4154 BIxSZT5oM4J9x470gbsNSFJAHFMTjPNHsEkeA+CDmkkUkcUPocOAIAOd7EAf3p1ZCzYMZC+DQoAO9Hhgcgsc0kUzCDn4pEOCd+37EUpyeDWK+VERTLf5qfuJCuQwAByRTZODinCjLzj9e" alt="Fawenbert Régis"></div>
+<div class="reveal">
+  <!-- Remplacer src="" par le lien de votre image réelle (ex: photo.jpg) -->
+  <img class="hero-photo" src="https://placeholder.com" alt="Fawenbert Régis">
+</div>
 </div></section>
 <section class="section-soft" id="apropos"><div class="container">
 <div class="section-head reveal"><span class="section-label">Découvrir</span><h2 class="section-title">À propos de moi</h2></div>
@@ -92,3 +96,22 @@ footer{border-top:1px solid var(--line);padding:28px;color:#888;font-size:12px;t
 </div></section>
 <section id="projets"><div class="container">
 <div class="section-head reveal"><span class="section-label">Portfolio</span><h2 class="section-title">Projets sélectionnés</h2><p class="section-description">Un aperçu des applications et interfaces récentes que j'ai conçues et développées.</p></div>
+<div class="projects">
+<div class="project">
+<div class="project-number">01 // E-COMMERCE & MANAGEMENT</div>
+<h3>FENVA BEAUTY</h3>
+<p>Plateforme e-commerce de cosmétiques premium avec catalogue dynamique par catégories, panier persistant, tunnel de commande WhatsApp et espace d'administration sécurisé pour la gestion des produits.</p>
+<a href="https://github.io" target="_blank" rel="noopener noreferrer" class="project-link">Visiter le site</a>
+</div>
+<div class="project">
+<div class="project-number">02 // WEB APPLICATION</div>
+<h3>Projet Précédent</h3>
+<p>Description courte de votre projet précédent, des technologies utilisées et du problème que vous avez résolu pour vos utilisateurs.</p>
+<a href="#" class="project-link">Voir le site</a>
+</div>
+</div>
+</div></section>
+<section class="section-soft" id="services"><div class="container">
+<div class="section-head reveal"><span class="section-label">Expertise</span><h2 class="section-title">Mes Services</h2></div>
+<div class="services-grid reveal">
+<div class="service"><h3>Développement Web</h3><p>Conception de sites vitrines et d'applications sur-mesure, performants et adaptés à tous les écrans.</p></div>
